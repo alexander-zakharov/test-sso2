@@ -7,6 +7,11 @@
 <body>
 <p>Hello world!!!! from app002</p>
 <br/>
+<a href="details.html" th:href="@{https://test-sso001.herokuapp.com/}">app001</a>
+<br/>
+<a href="logout" th:href="@{https://dev-872798.oktapreview.com/oauth2/default/v1/logout(id_token_hint=${token})}">Logout</a>
+<br/>
+<br/>
 Token: <span th:text="${token}"></span>
 </body>
 </html>
