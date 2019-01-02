@@ -1,5 +1,7 @@
 package tech.libra.test.okta.controller;
 
+import java.security.Principal;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,9 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 public class GreetingController {
 
 	@GetMapping("/")
-	public ModelAndView home() {
+	public ModelAndView home(Principal principal) {
+		OAuth2Authentication authentication = (OAuth2Authentication)principal;
+		String name = authentication.getName();
+	
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("token", getAccessToken());
+		mv.addObject("principal", principal);
 		return mv;
 	}
 	
