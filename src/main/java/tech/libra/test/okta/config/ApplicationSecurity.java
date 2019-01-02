@@ -34,11 +34,12 @@ public class ApplicationSecurity extends OAuth2SsoDefaultConfiguration {
         super.configure(http);
         // after calling super, you can change the logout success url
         http
-        	.logout()
-        		.deleteCookies()
-        		.invalidateHttpSession(true)
-        		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-        		.addLogoutHandler(logoutHandler);
-//        		.logoutSuccessUrl("/");
+    	.logout()
+    		.deleteCookies()
+    		.invalidateHttpSession(true)
+    		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//    		.addLogoutHandler(logoutHandler)
+//    		;
+    		.logoutSuccessUrl("/");
     }
 }
