@@ -3,16 +3,22 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Insert title here</title>
+<!--	<meta charset="UTF-8" />
+	<title>Insert title here</title>
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="/app.js"></script>-->
 </head>
 <body>
 <p>Hello world!!!! from app002</p>
 <span th:text="${principal.getName()}">Bob</span>
 <br/>
-<a href="details.html" th:href="@{https://test-sso001.herokuapp.com/}">app001</a>
+<a href="details.html" th:href="@{http://app1:8080/}">app001</a>
 <br/>
-<a href="details.html" th:href="@{https://test-sso001.herokuapp.com/logout}">app001 safe</a>
+<a href="details.html" th:href="@{http://app1:8080/logout}">app001 safe</a>
 <br/>
-<a href="logout" th:href="@{https://dev-872798.oktapreview.com/oauth2/default/v1/logout(id_token_hint=${token},post_logout_redirect_uri='https://test-sso002.herokuapp.com/logout')}">Logout</a>
+<a href="logout" th:href="@{https://dev-801845.oktapreview.com/oauth2/default/v1/logout(id_token_hint=${token},post_logout_redirect_uri='http://app2:8001/logout')}">Logout</a>
 <br/>
 <br/>
 Token: <span th:text="${token}"></span>
